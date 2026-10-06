@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lina Samuelsson · Systemutvecklare .NET</title>
+  <meta name="description" content="Lina Samuelsson, blivande systemutvecklare inom .NET. Projekt, CV och kontakt.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Sätt tema före rendering så att sidan inte blinkar
+    try { var t = localStorage.getItem('theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip" href="#hall" data-i18n="ui.skip">Hoppa till innehållet</a>
+
+  <!-- Penseldragsfilter för rankorna på knapparna -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="brush" x="-5%" y="-5%" width="110%" height="110%">
+      <!-- samma akvarellteknik som tallen i bilden (#wc), nedskalad till knapparnas storlek -->
+      <feTurbulence type="fractalNoise" baseFrequency="0.06" numOctaves="3" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="2.4" xChannelSelector="R" yChannelSelector="G" result="d"/>
+      <feGaussianBlur in="d" stdDeviation="0.45"/>
+    </filter>
+  </svg>
+
+  <header class="site-header">
+    <a class="brand" href="#">Lina Samuelsson</a>
+    <div class="toggles">
+      <button type="button" id="lang-toggle" class="pill" aria-label="Byt språk">EN</button>
+      <button type="button" id="theme-toggle" class="pill" aria-label="Byt ljust eller mörkt läge">
+        <span class="icon-moon" aria-hidden="true">☾</span><span class="icon-sun" aria-hidden="true">☀</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="hall">
+    <section class="hero">
+      <figure class="scene" aria-hidden="true">
+        <svg viewBox="0 0 800 460" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="wc" x="-10%" y="-10%" width="120%" height="120%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="7" result="n"/>
+              <feDisplacementMap in="SourceGraphic" in2="n" scale="9" xChannelSelector="R" yChannelSelector="G" result="d"/>
+              <feGaussianBlur in="d" stdDeviation="0.7"/>
+            </filter>
+            <filter id="soft"><feGaussianBlur stdDeviation="6"/></filter>
+            <filter id="hush"><feGaussianBlur stdDeviation="2.5"/></filter>
+            <filter id="glint"><feGaussianBlur stdDeviation="1"/></filter>
+            <!-- lyktsken från datorn: starkast närmast, tonar ut med avståndet -->
+            <radialGradient id="lantern" gradientUnits="userSpaceOnUse" cx="300" cy="372" r="230">
+              <stop offset="0" class="glow-stop" stop-opacity=".5"/>
+              <stop offset=".45" class="glow-stop" stop-opacity=".18"/>
+              <stop offset="1" class="glow-stop" stop-opacity="0"/>
+            </radialGradient>
+            <!-- samma former som tallen, så att skenet bara landar på stam och krona -->
+            <clipPath id="pine-shape">
+              <path d="M205 405 C200 340 214 300 196 250 C188 226 206 196 200 160 L212 160 C220 200 206 230 214 255 C230 300 222 350 226 405Z"/>
+              <path d="M206 250 C240 236 268 238 300 226 L302 232 C272 246 244 248 210 262Z"/>
+              <path d="M204 200 C180 190 152 192 128 182 L126 188 C150 200 178 200 202 212Z"/>
+              <ellipse cx="300" cy="214" rx="62" ry="18"/>
+              <ellipse cx="330" cy="200" rx="34" ry="11"/>
+              <ellipse cx="128" cy="172" rx="56" ry="16"/>
+              <ellipse cx="205" cy="148" rx="48" ry="15"/>
+              <ellipse cx="232" cy="128" rx="30" ry="10"/>
+            </clipPath>
+            <radialGradient id="glow">
+              <stop offset="0" class="glow-stop" stop-opacity=".9"/>
+              <stop offset="1" class="glow-stop" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- sol / måne -->
+          <circle class="orb" cx="600" cy="120" r="52" filter="url(#wc)"/>
+
+          <!-- berg i dimma -->
+          <path class="mist far" filter="url(#wc)" d="M0 300 L90 230 L170 270 L260 190 L360 260 L450 210 L560 275 L650 220 L740 260 L800 240 L800 330 L0 330Z"/>
+          <path class="mist mid" filter="url(#wc)" d="M0 340 L70 300 L150 320 L240 280 L330 318 L430 288 L520 330 L620 300 L720 325 L800 305 L800 370 L0 370Z"/>
+          <path class="mist fog" filter="url(#soft)" d="M0 345 Q200 325 400 345 T800 340 L800 365 L0 365Z"/>
+
+          <!-- natt: månens blänk i vattnet, bara i mörkt läge och mycket subtilt -->
+          <g class="night moon-glint" filter="url(#glint)">
+            <ellipse cx="600" cy="375" rx="26" ry="2"/>
+            <ellipse cx="607" cy="381" rx="17" ry="1.6"/>
+            <ellipse cx="595" cy="387" rx="11" ry="1.4"/>
+            <ellipse cx="603" cy="392" rx="6" ry="1.1"/>
+          </g>
+
+          <!-- mark -->
+          <path class="ground" filter="url(#wc)" d="M0 400 Q180 370 360 392 T800 385 L800 460 L0 460Z"/>
+
+          <!-- tall -->
+          <g class="pine" filter="url(#wc)">
+            <path class="trunk" d="M205 405 C200 340 214 300 196 250 C188 226 206 196 200 160 L212 160 C220 200 206 230 214 255 C230 300 222 350 226 405Z"/>
+            <path class="trunk" d="M206 250 C240 236 268 238 300 226 L302 232 C272 246 244 248 210 262Z"/>
+            <path class="trunk" d="M204 200 C180 190 152 192 128 182 L126 188 C150 200 178 200 202 212Z"/>
+            <ellipse class="needles" cx="300" cy="214" rx="62" ry="18"/>
+            <ellipse class="needles" cx="330" cy="200" rx="34" ry="11"/>
+            <ellipse class="needles" cx="128" cy="172" rx="56" ry="16"/>
+            <ellipse class="needles" cx="205" cy="148" rx="48" ry="15"/>
+            <ellipse class="needles" cx="232" cy="128" rx="30" ry="10"/>
+          </g>
+          <!-- natt: datorn som en lykta, lyser försiktigt upp stammen, kronan och marken närmast -->
+          <g class="night lantern">
+            <rect x="0" y="0" width="800" height="460" fill="url(#lantern)" clip-path="url(#pine-shape)"/>
+            <ellipse cx="292" cy="404" rx="80" ry="9" fill="url(#lantern)" filter="url(#hush)"/>
+          </g>
+
+          <!-- Lina med datorn -->
+          <g class="person" filter="url(#wc)">
+            <circle class="laptop-glow" cx="292" cy="372" r="34" fill="url(#glow)"/>
+            <path class="body" d="M246 404 C244 384 248 366 258 356 C266 350 276 352 280 362 L284 388 Z"/>
+            <path class="body" d="M236 404 C252 396 290 394 316 404 Z"/>
+            <circle class="skin" cx="262" cy="340" r="11"/>
+            <path class="hair" d="M250 342 C246 324 262 316 274 326 C282 334 278 352 284 364 C272 362 270 352 268 346 C262 352 256 360 250 362 C252 354 248 350 250 342Z"/>
+            <path class="laptop" d="M282 388 L316 388 L322 396 L276 396Z"/>
+            <path class="laptop screen" d="M294 388 L304 362 L330 362 L320 388Z"/>
+          </g>
+
+          <!-- ett löv faller en gång, från vänster till höger, och blir liggande -->
+          <g transform="translate(150 160)">
+            <path class="leaf" d="M0 -7 C5 -4 6 3 0 7 C-6 3 -5 -4 0 -7Z M0 -7 L0 9"/>
+          </g>
+        </svg>
+      </figure>
+
+      <div class="intro">
+        <p class="eyebrow" data-i18n="hero.role">Blivande systemutvecklare inom .NET</p>
+        <h1 data-i18n="hero.name">Lina Samuelsson</h1>
+        <p class="tagline" data-i18n="hero.tagline"></p>
+        <svg class="brush" viewBox="0 0 300 12" aria-hidden="true"><path d="M2 8 C60 2 120 11 180 6 S260 3 298 7" /></svg>
+      </div>
+    </section>
+
+    <nav class="rooms" aria-label="Innehåll" id="rooms"></nav>
+    <noscript><p class="noscript">Den här sidan behöver JavaScript för att visa innehållet.</p></noscript>
+  </main>
+
+  <footer class="site-footer">
+    <a class="icon-link" href="https://github.com/Linaslala" rel="me noopener" target="_blank"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a>
+    <a class="icon-link" href="https://www.linkedin.com/in/lina-samuelsson-09216846/" rel="me noopener" target="_blank"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+    <button type="button" class="linkish" data-open="prompts" data-i18n="ui.builtWithAi">Hur jag byggt min sida</button>
+    <span>© <span id="year">2026</span></span>
+    <div class="marquee" id="credits"></div>
+  </footer>
+
+  <dialog class="modal" id="modal" aria-labelledby="modal-title">
+    <div class="modal-inner">
+      <header class="modal-head">
+        <h2 id="modal-title"></h2>
+        <button type="button" class="close" id="modal-close" data-i18n-label="ui.close" aria-label="Stäng">×</button>
+      </header>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </dialog>
+
+  <script src="content/texts.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

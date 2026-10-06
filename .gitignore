@@ -1,0 +1,15 @@
+# Planeringsfiler med personliga uppgifter stannar lokalt.
+# Bara prompt-library.md publiceras, eftersom knappen "Prompt library" laddar ner den.
+docs/*
+!docs/prompt-library.md
+
+# Lokala verktyg för förhandsvisning (Claude Code)
+.claude/
+
+# Källfilen till CV:t stannar lokalt; den färdiga PDF:en publiceras
+assets/cv/*.html
+
+# Systemfiler
+Thumbs.db
+desktop.ini
+.DS_Store
