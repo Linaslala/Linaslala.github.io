@@ -2,7 +2,7 @@
 
 > Linas promptar under bygget, omskrivna till välstrukturerade promptar (Roll · Mål · Kontext · Instruktioner · Noter). Originalen var dikterade och spretiga. Innehållet är detsamma, formen är städad.
 > Används i modalen **Prompt library** (öppnas via "Byggd 100 % med AI" i sidfoten). Uppdateras efter varje steg i bygget.
-> Senast uppdaterad: 2026-10-06 (39 promptar).
+> Senast uppdaterad: 2026-10-06 (40 promptar).
 
 ---
 
@@ -487,4 +487,10 @@ Lägg in texten som den är, bara med stavning och skiljetecken rättade. Övers
 2. Publicera sajten, prompt-library.md och CLAUDE.md. Övriga planeringsfiler stannar lokalt.
 3. Använd GitHubs anonyma e-postadress i commits.
 4. Slå på GitHub Pages.
+```
+
+## 40. README för GitHub
+```
+# Mål
+Lägg till en README så att repot syns och förklarar sig självt på GitHub.
 ```
