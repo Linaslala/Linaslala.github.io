@@ -336,7 +336,10 @@
       modalBody.append(back);
     }
     renderBlocks(s.blocks, modalBody);
-    if (!modal.open) modal.showModal();
+    if (!modal.open) {
+      modal.showModal();
+      modal.focus(); // fokus på rutan i stället för krysset, så att ingen fokusmarkering syns direkt
+    }
     modalBody.scrollTop = 0;
   }
 

@@ -2,7 +2,7 @@
 
 > Linas promptar under bygget, omskrivna till välstrukturerade promptar (Roll · Mål · Kontext · Instruktioner · Noter). Originalen var dikterade och spretiga. Innehållet är detsamma, formen är städad.
 > Används i modalen **Prompt library** (öppnas via "Byggd 100 % med AI" i sidfoten). Uppdateras efter varje steg i bygget.
-> Senast uppdaterad: 2026-10-06 (40 promptar).
+> Senast uppdaterad: 2026-10-06 (41 promptar).
 
 ---
 
@@ -493,4 +493,10 @@ Lägg in texten som den är, bara med stavning och skiljetecken rättade. Övers
 ```
 # Mål
 Lägg till en README så att repot syns och förklarar sig självt på GitHub.
+```
+
+## 41. Ingen blå bakgrund på krysset
+```
+# Instruktioner
+I liveversionen har krysset på modalerna blå bakgrund. Ta bort den.
 ```
