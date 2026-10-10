@@ -39,9 +39,11 @@ const PROJECTS = [
   { n: 11, name: "Formulärflödet", stack: ["n8n", "Web3Forms"],
     course: { sv: "Automation", en: "Automation" },
     what: { sv: "Kontaktformuläret sorteras och besvaras automatiskt.", en: "The contact form is sorted and answered automatically." } },
-  { n: 12, name: "LIA-bevakaren", stack: ["n8n", "Claude"],
-    course: { sv: "Automation", en: "Automation" },
-    what: { sv: "Schemalagd agent som bevakar LIA-annonser.", en: "Scheduled agent that watches internship ads." } }
+  { n: 12, name: "Halvar", stack: ["Claude Code", "MCP", "JobTech API", "Markdown"],
+    course: { sv: "Min personliga AI-assistent", en: "My personal AI assistant" },
+    status: { sv: "Pågår", en: "In progress" },
+    what: { sv: "Han tar hand om det i min vardag som går att automatisera och delar ut jobben till sitt eget lilla team. Just nu letar han till exempel LIA-platser och sköter den här sidan. Han föreslår, jag bestämmer.",
+            en: "He takes care of whatever in my day can be automated and hands the work out to his own small team. Right now, for example, he hunts for internships and looks after this site. He suggests, I decide." } }
 ];
 
 // AI-verktyg från Outskill-anteckningarna (dag 1, dag 2, bonusdagen och Notion-listan), grupperade
@@ -112,7 +114,7 @@ const TEXTS = {
         { h3: "Teknik" },
         { tags: ["C#", ".NET", "ASP.NET Core", "MVC", "Razor", "Web API", "EF Core", "ADO.NET", "SQL Server", "T-SQL", "LINQ", "OOP", "SOLID", "DI", "HTML", "CSS", "JavaScript", "Bootstrap", "SASS"] },
         { h3: "Verktyg" },
-        { tags: ["Visual Studio", "VS Code", "SSMS", "Git", "GitHub", "PowerShell", "Azure DevOps", "Azure", "Swagger", "Claude", "n8n", "Fortnox", "Visma"] },
+        { tags: ["Visual Studio", "VS Code", "SSMS", "Git", "GitHub", "PowerShell", "Azure DevOps", "Azure", "Swagger", "Claude", "Fortnox", "Visma"] },
         { download: "assets/cv/Lina-Samuelsson-CV-LIA-2027.pdf", label: "Ladda ner CV (PDF)" }
       ] },
       projects: { title: "Projekt", blocks: [
@@ -240,7 +242,7 @@ const TEXTS = {
         { h3: "Tech" },
         { tags: ["C#", ".NET", "ASP.NET Core", "MVC", "Razor", "Web API", "EF Core", "ADO.NET", "SQL Server", "T-SQL", "LINQ", "OOP", "SOLID", "DI", "HTML", "CSS", "JavaScript", "Bootstrap", "SASS"] },
         { h3: "Tools" },
-        { tags: ["Visual Studio", "VS Code", "SSMS", "Git", "GitHub", "PowerShell", "Azure DevOps", "Azure", "Swagger", "Claude", "n8n", "Fortnox", "Visma"] },
+        { tags: ["Visual Studio", "VS Code", "SSMS", "Git", "GitHub", "PowerShell", "Azure DevOps", "Azure", "Swagger", "Claude", "Fortnox", "Visma"] },
         { download: "assets/cv/Lina-Samuelsson-CV-LIA-2027.pdf", label: "Download CV (PDF, Swedish)" }
       ] },
       projects: { title: "Projects", blocks: [

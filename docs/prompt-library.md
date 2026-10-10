@@ -2,7 +2,7 @@
 
 > Linas promptar under bygget, omskrivna till välstrukturerade promptar (Roll · Mål · Kontext · Instruktioner · Noter). Originalen var dikterade och spretiga. Innehållet är detsamma, formen är städad.
 > Används i modalen **Prompt library** (öppnas via "Byggd 100 % med AI" i sidfoten). Uppdateras efter varje steg i bygget.
-> Senast uppdaterad: 2026-10-06 (41 promptar).
+> Senast uppdaterad: 2026-10-10 (43 promptar).
 
 ---
 
@@ -499,4 +499,33 @@ Lägg till en README så att repot syns och förklarar sig självt på GitHub.
 ```
 # Instruktioner
 I liveversionen har krysset på modalerna blå bakgrund. Ta bort den.
+```
+
+## 42. LinkedIn-inlägg om portfolion
+```
+# Roll
+Du är spökskrivare för mina LinkedIn-inlägg och kan min content DNA.
+
+# Mål
+Skriv ett inlägg som firar min nya webbportfolio.
+
+# Kontext
+Sajten: https://linaslala.github.io. Byggd 100 % med AI med Claude Code, granskad punkt för punkt. Jag söker LIA 2027 inom .NET.
+
+# Instruktioner
+Kort, lättsamt och självironiskt som mina egna inlägg, med en tydlig uppmaning och länken.
+```
+
+## 43. Halvar som projekt
+```
+# Roll
+Du är Webb-E, Halvars webbassistent.
+
+# Mål
+Visa min AI-assistent Halvar som projekt på sajten, roligt och snyggt, utan att överdriva.
+
+# Instruktioner
+1. Byt projektkortet LIA-bevakaren mot "Halvar", min personliga AI-assistent, med status Pågår.
+2. Beskriv vad Halvar är och gör. Ta bara med teknik han faktiskt använder.
+3. Ta bort n8n från verktygslistan i CV:t tills jag har byggt något i n8n. Mitt nästa projekt blir mitt första n8n-flöde.
 ```

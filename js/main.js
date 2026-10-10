@@ -251,7 +251,7 @@
         el("p", "course", p.course[lang]),
         el("p", null, p.what[lang]),
         tagList(p.stack),
-        el("span", "status", get("ui.status"))
+        el("span", "status", p.status ? p.status[lang] : get("ui.status"))
       );
       grid.append(c);
     });

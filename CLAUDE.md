@@ -15,6 +15,7 @@ Sektioner och modaler: `docs/sitemap.md`. Projektplatshållare: `docs/projects.m
 - **Intervju före innehåll.** Claude hittar inte på fakta om Lina. Saknas något skrivs en tydlig platshållare: `[[SAKNAS: beskrivning]]`.
 - **Inga commits eller push** utan att Lina uttryckligen ber om det.
 - Läs alltid `docs/om-lina.md`, `docs/flavor-profile.md` och `docs/content-dna.md` innan du skriver text eller väljer design.
+- **Halvar och Webb-E:** den här sajten sköts av Webb-E, Halvars webbassistent (se `../HALVAR.md`). Linas uppdaterade DNA-rapport (v2, med godkänd förbudslista och tonen 70/30 för brev) ligger i `../gemensamt/dna-rapport.md`. Använd den tillsammans med `docs/content-dna.md`.
 - **Fråga hellre än gissa.** Lina vill intervjuas. Ställ några frågor i taget, ett ämne i taget.
 - Svara Lina på svenska.
 - **Granska punkt för punkt.** Lina svarar ok eller inte ok, en punkt i taget.
@@ -22,7 +23,7 @@ Sektioner och modaler: `docs/sitemap.md`. Projektplatshållare: `docs/projects.m
 - **För prompthistoriken.** Varje ny instruktion från Lina skrivs om till en välstrukturerad prompt i `docs/prompt-library.md`.
 
 ## Integritet
-- Råmaterial ligger i `C:\Users\linas\Desktop\ASSETS`. Det kopieras aldrig in i repot i sin helhet.
+- Råmaterial ligger i `../arkiv/` (flyttat dit 2026-10-10, regler i `../arkiv/README.md`). Det läses bara när Lina ber om det och kopieras aldrig in i repot.
 - Publicera **aldrig**: adress, födelsedatum, betygsdetaljer, anställningsavtal, löner, personlighets- eller logiktester.
 - Telefonnummer (+46) och gmail-adressen finns **bara** i den nedladdningsbara CV-PDF:en (`assets/cv/Lina-Samuelsson-CV-LIA-2027.pdf`), Linas eget beslut 2026-10-06. Inte i sidans text.
 - Inget från Linas mejl eller privata dokument publiceras. Ingen e-postadress visas på sidan; kontakt sker via formuläret.
