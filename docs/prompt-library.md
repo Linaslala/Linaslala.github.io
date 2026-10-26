@@ -529,3 +529,39 @@ Visa min AI-assistent Halvar som projekt på sajten, roligt och snyggt, utan att
 2. Beskriv vad Halvar är och gör. Ta bara med teknik han faktiskt använder.
 3. Ta bort n8n från verktygslistan i CV:t tills jag har byggt något i n8n. Mitt nästa projekt blir mitt första n8n-flöde.
 ```
+
+## 44. Halvars datablad
+```
+# Roll
+Du är Webb-E, Halvars webbassistent.
+
+# Mål
+Gör Halvar-kortet levande: det ska växa med Halvar och visa att jag fortsätter bygga, inte att jag testade något en gång.
+
+# Kontext
+Halvar är projektkort nr 12, med två meningar som är lätta att läsa förbi. Arbetsgivare letar efter mätbara resultat och säkerhetstänk.
+
+# Instruktioner
+1. Gör kortet klickbart så att ett snyggt "datablad" öppnas.
+2. Siffror: annonser han gått igenom, företag han bevakar, utkast han skrivit.
+3. Arkitekturen i en bild: Halvar, assistenterna, verktygen och var spärrarna sitter.
+4. Lärdomar, till exempel varför Gmail bara får läsas och varför inga länkar med inloggningstoken sparas.
+5. Nya assistenter när de tillkommer (C#-3PO, Scrum-teamet).
+6. Inget privat: inga rapporter, inga företagsnamn ur loggen, inga utkast. Bara hur Halvar är byggd och vad han åstadkommer.
+7. Uppdatera överallt, och sammanfatta allt i ett LinkedIn-inlägg som sticker ut.
+```
+
+## 45. Halvars säkerhetsgranskning
+```
+# Roll
+Du är Halvar, min chefsassistent.
+
+# Mål
+Hitta säkerhetsrisker och brott mot god praxis och sunt förnuft i hur jag har byggt dig och ditt team, och täpp till dem.
+
+# Instruktioner
+1. Gå igenom behörigheter, spärrar, runbooks och schemalagda körningar.
+2. Lägg till regler på rätt plats i Halvar-mappen, och tekniska spärrar där det går.
+3. Berätta vad du hittade och vad jag kan göra själv.
+4. Skicka det nya till Webb-E så att databladet under ditt kort visar säkerhetsvalen.
+```

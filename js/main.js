@@ -232,7 +232,52 @@
         parent.append(link);
       }
       else if (b.form) parent.append(contactForm());
+      else if (b.stats) {
+        // Siffrorna i Halvars datablad: stort tal, kort etikett
+        const ul = el("ul", "stats");
+        b.stats.forEach(([num, label]) => {
+          const li = el("li");
+          li.append(el("strong", null, num), el("span", null, label));
+          ul.append(li);
+        });
+        parent.append(ul);
+      }
+      else if (b.org) parent.append(orgChart(b.org));
+      else if (b.crew) {
+        // Teamet i Halvars datablad: namn, roll och en kort beskrivning
+        const ul = el("ul", "crew");
+        b.crew.forEach(([name, role, text]) => {
+          const li = el("li");
+          li.append(el("strong", null, name), el("span", "crew-role", role), el("p", null, text));
+          ul.append(li);
+        });
+        parent.append(ul);
+      }
     });
+  }
+
+  // Halvars arkitektur som en enkel organisationsbild i HTML, så att den bryts om snyggt på mobil
+  const LOCK = `<svg viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="6" width="10" height="7.5" rx="1.5"/><path d="M3.5 6V4a2.5 2.5 0 0 1 5 0v2" fill="none" stroke-width="1.6"/></svg>`;
+  function orgChart(o) {
+    const wrap = el("div", "org");
+    const node = (tag, cls, [name, role]) => {
+      const d = el(tag, "org-node " + cls);
+      d.append(el("strong", null, name), el("span", null, role));
+      return d;
+    };
+    wrap.append(node("div", "org-lina", o.top), el("p", "org-link", o.link), node("div", "org-hub", o.hub), el("span", "org-line"));
+    const team = el("ul", "org-team");
+    o.team.forEach(t => team.append(node("li", "", t)));
+    const tools = el("ul", "org-tools");
+    o.tools.forEach(([name, lock]) => {
+      const li = el("li", lock ? "locked" : null);
+      if (lock) li.insertAdjacentHTML("beforeend", LOCK);
+      li.append(el("strong", null, name));
+      if (lock) li.append(el("span", null, lock));
+      tools.append(li);
+    });
+    wrap.append(team, el("p", "org-link", o.toolsLink), tools, el("p", "org-legend", o.legend));
+    return wrap;
   }
 
   function tagList(items) {
@@ -253,6 +298,14 @@
         tagList(p.stack),
         el("span", "status", p.status ? p.status[lang] : get("ui.status"))
       );
+      // Kort med eget datablad: hela kortet går att klicka på, knappen finns för tangentbordet
+      if (p.open) {
+        c.classList.add("card-open");
+        c.dataset.open = p.open;
+        const more = el("button", "more-link", get("ui.datasheet") + " →");
+        more.type = "button";
+        c.append(more);
+      }
       grid.append(c);
     });
     return grid;

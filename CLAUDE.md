@@ -14,6 +14,7 @@ Sektioner och modaler: `docs/sitemap.md`. Projektplatshållare: `docs/projects.m
 - **Ett steg i taget.** Claude föreslår, Lina godkänner, sedan byggs det.
 - **Intervju före innehåll.** Claude hittar inte på fakta om Lina. Saknas något skrivs en tydlig platshållare: `[[SAKNAS: beskrivning]]`.
 - **Inga commits eller push** utan att Lina uttryckligen ber om det.
+- **`main` är skyddad på GitHub** (ruleset "Skydda main", Lina 2026-10-26): ingen direkt push, ingen force-push, ingen radering. Arbetsgång: skapa en gren `webbe/<ämne>` från `main`, commit och push av grenen (när Lina ber om det), Lina öppnar en pull request och klickar Merge. Först då publiceras sajten. Efter merge: `git switch main` och `git pull`, ta sedan bort den gamla grenen lokalt.
 - Läs alltid `docs/om-lina.md`, `docs/flavor-profile.md` och `docs/content-dna.md` innan du skriver text eller väljer design.
 - **Halvar och Webb-E:** den här sajten sköts av Webb-E, Halvars webbassistent (se `../HALVAR.md`). Linas uppdaterade DNA-rapport (v2, med godkänd förbudslista och tonen 70/30 för brev) ligger i `../gemensamt/dna-rapport.md`. Använd den tillsammans med `docs/content-dna.md`.
 - **Fråga hellre än gissa.** Lina vill intervjuas. Ställ några frågor i taget, ett ämne i taget.

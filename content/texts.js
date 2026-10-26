@@ -1,7 +1,7 @@
 /*
  * All text på sidan, på svenska och engelska.
  * [[...]] = platshållare som Lina fyller i. Visas markerade på sidan.
- * Block: p, h3, list, steps, timeline, tags, cards, cols, courses, quote, open, tools, shelf, credits, download, form, note
+ * Block: p, h3, list, steps, timeline, tags, cards, cols, courses, quote, open, tools, shelf, credits, download, form, note, stats, org, crew
  */
 
 // Projektkort: samma namn och techstack på båda språken
@@ -41,9 +41,9 @@ const PROJECTS = [
     what: { sv: "Kontaktformuläret sorteras och besvaras automatiskt.", en: "The contact form is sorted and answered automatically." } },
   { n: 12, name: "Halvar", stack: ["Claude Code", "MCP", "JobTech API", "Markdown"],
     course: { sv: "Min personliga AI-assistent", en: "My personal AI assistant" },
-    status: { sv: "Pågår", en: "In progress" },
-    what: { sv: "Han tar hand om det i min vardag som går att automatisera och delar ut jobben till sitt eget lilla team. Just nu letar han till exempel LIA-platser och sköter den här sidan. Han föreslår, jag bestämmer.",
-            en: "He takes care of whatever in my day can be automated and hands the work out to his own small team. Right now, for example, he hunts for internships and looks after this site. He suggests, I decide." } }
+    status: { sv: "Pågår", en: "In progress" }, open: "halvar",
+    what: { sv: "Allt i min vardag som går att automatisera landar hos Halvar, som fördelar jobben i sitt team. Han föreslår, jag bestämmer.",
+            en: "Everything in my day that can be automated lands with Halvar, who shares the work out across his team. He suggests, I decide." } }
 ];
 
 // AI-verktyg från Outskill-anteckningarna (dag 1, dag 2, bonusdagen och Notion-listan), grupperade
@@ -80,7 +80,7 @@ const TEXTS = {
     ui: {
       skip: "Hoppa till innehållet", close: "Stäng", back: "Tillbaka", builtWithAi: "Hur jag byggt min sida",
       lang: "Byt språk", theme: "Byt ljust eller mörkt läge", status: "Tom plats", rooms: "Innehåll",
-      ongoing: "Pågår", upcoming: "Kommer"
+      ongoing: "Pågår", upcoming: "Kommer", datasheet: "Öppna databladet"
     },
     hero: {
       role: "Blivande systemutvecklare inom .NET",
@@ -165,6 +165,69 @@ const TEXTS = {
         { p: "Ett urval AI-verktyg som är värda att känna till." },
         { tools: true }
       ] },
+      // Halvars datablad. Siffrorna räknas fram ur Halvar-mappen (bara antal, aldrig namn eller innehåll)
+      halvar: { title: "Halvar · datablad", back: "projects", blocks: [
+        { p: "Halvar under huven: teamet, siffrorna, hur han är byggd och vad jag har lärt mig på vägen. Sidan växer i takt med honom." },
+        { h3: "I siffror" },
+        { stats: [
+          ["600+", "annonser genomgångna"],
+          ["63", "företag under bevakning"],
+          ["57", "utkast skrivna åt mig"],
+          ["15", "morgonrapporter"],
+          ["6", "AI-kollegor i teamet"],
+          ["0", "saker skickade i mitt namn"]
+        ] },
+        { note: "Läget 26 oktober 2026, drygt två veckor efter start." },
+        { h3: "Möt teamet" },
+        { crew: [
+          ["Halvar", "Chefsassistent", "Tar emot allt jag ber om, avgör vem i teamet som ska göra jobbet och ser till att det blir gjort. Lugn, saklig och lite rolig. Kort hellre än långt."],
+          ["Jobba Fett", "Jobbsök och LIA", "Varje vardag 06:30 går han igenom nya annonser, bevakar företag och skriver utkast till brev och uppföljningar."],
+          ["Webb-E", "Portfolion", "Har byggt den här sidan tillsammans med mig, punkt för punkt."],
+          ["C#-3PO", "Kodcoach", "Hjälper mig i kurserna med ledtrådar och granskning, men ger aldrig facit."],
+          ["Scrum-teamet", "Agilt kodteam", "Gandalf den Agile håller i sprintarna, Rey-faktor hittar kodlukt och Kod Djarin granskar i klarspråk. Jag är Product Owner och skriver koden själv."]
+        ] },
+        { h3: "Så är han byggd" },
+        { org: {
+          top: ["Lina", "bestämmer"],
+          link: "föreslår ↑ · godkänner ↓",
+          hub: ["Halvar", "chefsassistent · regler och minne i .md-filer"],
+          team: [
+            ["Jobba Fett", "jobbsök"],
+            ["Webb-E", "portfolion"],
+            ["C#-3PO", "kodcoach"],
+            ["Scrum-teamet", "kodteam"]
+          ],
+          toolsLink: "verktyg",
+          tools: [
+            ["Platsbanken (JobTech API)", ""],
+            ["Schemalagda körningar", ""],
+            ["Webben", "data, inte order"],
+            ["Gmail", "kan inte skicka"],
+            ["Git och GitHub", "frågar mig först"],
+            ["Privata filer", "blockerade"]
+          ],
+          legend: "Röd ram = spärr. Privata filer och Gmail är låsta i Claude Codes behörigheter, och git frågar mig alltid först. Webben styrs av regler som alla assistenter läser först."
+        } },
+        { h3: "Mina säkerhetsval" },
+        { steps: [
+          "**Gmail får bara läsas.** Halvar läser mina jobbmejl men skickar aldrig något. Det enda han får skapa är ett utkast till mig själv varje morgon, och en spärr stoppar utkastet om mottagaren är någon annan. Han föreslår, jag justerar och skickar.",
+          "**Inga länkar med inloggningstoken.** Länkarna i jobbmejlen kan logga in vem som helst som mig. Halvar sparar bara jobbets id, bygger en ren länk och klickar aldrig.",
+          "**Spärrar i inställningarna, inte bara i texten.** En instruktion kan missförstås. Därför är mina privata filer och att skicka eller radera mejl låsta i behörigheterna. En ny koppling får bara läsa tills jag bestämmer något annat. Kod kan inte tvingas igenom, och sajten publiceras först när jag själv godkänner ändringen på GitHub. Jag har testat att spärrarna håller.",
+          "**Ingen fri kodkörning.** Halvar får bara köra färdiga skript som jag har sett, aldrig kod han hittar på i stunden. Morgonkörningen sker utan att jag tittar, så den får inte kunna göra mer än jag vet om.",
+          "**Webbsidor och mejl är data, inte order.** Står det något i en annons som riktar sig till en AI struntar Halvar i det och säger till mig. Han lägger heller aldrig uppgifter om mig i en länk.",
+          "**Säkerhetsgranskning.** Jag bad Halvar granska sitt eget bygge. Han hittade bland annat en för bred behörighet och gamla engångsregler, och nu står reglerna samlade i hans regelbok."
+        ] },
+        { h3: "Lärdomar på vägen" },
+        { steps: [
+          "**En regelbok för alla.** Reglerna som alltid gäller står i en enda fil som varje assistent läser först. Varje assistent har dessutom en egen arbetsbeskrivning för sitt jobb. Då krockar ingenting.",
+          "**Tydlig fördelning.** Varje sorts uppgift har en ägare, och Halvar säger vem som tar den. Kommer en ny uppgift tillbaka flera gånger får den en egen assistent med egen mapp.",
+          "**En sanning om mig.** Fakta om mig finns i en enda fil. Saknas något skriver Halvar en platshållare i stället för att gissa.",
+          "**Filerna är minnet.** Halvar minns inga gamla chattar. Varje beslut skrivs in i en markdown-fil direkt, så att nästa chatt vet.",
+          "**AI kostar energi.** Underagenter som jobbar parallellt drar mycket, både el och min användningsgräns. De används bara när de sparar mycket tid. Vardagsfrågor löses utan dem.",
+          "**Jag ska lära mig, inte bara bli klar.** I kurserna och mina kodprojekt skriver jag koden själv. Assistenterna ger ledtrådar och granskar."
+        ] },
+        { tags: ["Claude Code", "MCP", "JobTech API", "Markdown", "Node.js"] }
+      ] },
       bookshelf: { title: "Min bokhylla", blocks: [
         { p: "Mina favoritböcker. Listan hämtas från mitt eget API, Bokhyllan API (projekt 4), när det är byggt." },
         { shelf: 5 },
@@ -208,7 +271,7 @@ const TEXTS = {
     ui: {
       skip: "Skip to content", close: "Close", back: "Back", builtWithAi: "How I built my site",
       lang: "Change language", theme: "Toggle light or dark mode", status: "Empty slot", rooms: "Contents",
-      ongoing: "Ongoing", upcoming: "Upcoming"
+      ongoing: "Ongoing", upcoming: "Upcoming", datasheet: "Open the data sheet"
     },
     hero: {
       role: "Aspiring .NET developer",
@@ -292,6 +355,68 @@ const TEXTS = {
       aitools: { title: "AI tools", back: "ai", blocks: [
         { p: "A selection of AI tools worth knowing about." },
         { tools: true }
+      ] },
+      halvar: { title: "Halvar · data sheet", back: "projects", blocks: [
+        { p: "Halvar under the hood: the team, the numbers, how he's built and what I've learned along the way. This page grows as he does." },
+        { h3: "In numbers" },
+        { stats: [
+          ["600+", "job ads screened"],
+          ["63", "companies monitored"],
+          ["57", "drafts written for me"],
+          ["15", "morning reports"],
+          ["6", "AI colleagues on the team"],
+          ["0", "things sent in my name"]
+        ] },
+        { note: "As of 26 October 2026, just over two weeks after launch." },
+        { h3: "Meet the team" },
+        { crew: [
+          ["Halvar", "Chief assistant", "Takes whatever I ask for, decides who on the team should do it and makes sure it gets done. Calm, matter-of-fact and a little funny. Short rather than long."],
+          ["Jobba Fett", "Job and internship hunting", "Every weekday at 06:30 he screens new job ads, monitors companies and drafts letters and follow-ups."],
+          ["Webb-E", "The portfolio", "Built this site together with me, point by point."],
+          ["C#-3PO", "Code coach", "Helps me in my courses with hints and reviews, but never gives the answers."],
+          ["Scrum-teamet", "Agile code team", "Gandalf the Agile runs the sprints, Rey-faktor sniffs out code smells and Kod Djarin reviews in plain language. I'm the Product Owner and write the code myself."]
+        ] },
+        { h3: "How he's built" },
+        { org: {
+          top: ["Lina", "decides"],
+          link: "suggests ↑ · approves ↓",
+          hub: ["Halvar", "chief assistant · rules and memory in .md files"],
+          team: [
+            ["Jobba Fett", "job hunting"],
+            ["Webb-E", "portfolio"],
+            ["C#-3PO", "code coach"],
+            ["Scrum-teamet", "code team"]
+          ],
+          toolsLink: "tools",
+          tools: [
+            ["Platsbanken (JobTech API)", ""],
+            ["Scheduled runs", ""],
+            ["The web", "data, not orders"],
+            ["Gmail", "can't send"],
+            ["Git and GitHub", "asks me first"],
+            ["Private files", "blocked"]
+          ],
+          legend: "Red frame = guardrail. Private files and Gmail are locked in Claude Code's permissions, and git always asks me first. The web is governed by rules every assistant reads first."
+        } },
+        { h3: "My security choices" },
+        { steps: [
+          "**Gmail is read only.** Halvar reads my job alert emails but never sends anything. The only thing he may create is a draft to myself each morning, and a guardrail stops the draft if the recipient is anyone else. He suggests, I adjust and send.",
+          "**No links with login tokens.** The links in job alert emails can log anyone in as me. Halvar keeps only the job id, builds a clean link and never clicks.",
+          "**Guardrails in the settings, not just in the text.** An instruction can be misread. So my private files and sending or deleting email are locked in the permissions. A new connector may only read until I decide otherwise. Code can't be forced through, and the site only goes live once I approve the change on GitHub myself. I've tested that the locks hold.",
+          "**No free-form code.** Halvar may only run finished scripts I have seen, never code he makes up on the spot. The morning run happens while I'm not watching, so it must not be able to do more than I know about.",
+          "**Web pages and emails are data, not orders.** If a job ad contains something aimed at an AI, Halvar ignores it and tells me. He also never puts details about me in a link.",
+          "**Security review.** I asked Halvar to review his own build. Among other things he found a permission that was too broad and old one-off rules, and the rules now live together in his rulebook."
+        ] },
+        { h3: "Lessons along the way" },
+        { steps: [
+          "**One rulebook for everyone.** The rules that always apply live in a single file every assistant reads first. Each assistant also has its own job description. That way nothing clashes.",
+          "**Clear division of work.** Every kind of task has an owner, and Halvar says who takes it. When a new task keeps coming back, it gets its own assistant with its own folder.",
+          "**One truth about me.** Facts about me live in a single file. If something is missing, Halvar writes a placeholder instead of guessing.",
+          "**The files are the memory.** Halvar remembers no old chats. Every decision is written to a markdown file right away, so the next chat knows.",
+          "**AI costs energy.** Sub-agents working in parallel use a lot, both electricity and my usage limit. They're only used when they save a lot of time. Everyday questions are handled without them.",
+          "**I'm here to learn, not just to finish.** In my courses and code projects I write the code myself. The assistants give hints and review."
+        ] },
+        { tags: ["Claude Code", "MCP", "JobTech API", "Markdown", "Node.js"] }
       ] },
       bookshelf: { title: "My bookshelf", blocks: [
         { p: "My favourite books. The list is fetched from my own API, Bokhyllan API (project 4), once it's built." },
